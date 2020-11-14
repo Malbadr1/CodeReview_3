@@ -55,8 +55,8 @@ public class Station {
 
 user.attachBike(bike);
         bikes.remove(bike.getId());
-        System.out.println("User : "+"\t"+user.getName()+"\t"+" now renting bike Id:"+"\t"+bike.getId()+"\t"+"from"+"\t"+stationStart+
-                "\n"+"User : "+"\t"+user.getName()+"\t"+" now returned bike Id:"+"\t"+bike.getId()+"\t"+"to"+"\t"+stationEnd);
+        System.out.println("User : "+"\t"+user.getName()+"\t"+user.getSureName()+" now renting bike Id:"+"\t"+bike.getId()+"\t"+"from"+"\t"+stationStart+
+                "\n"+"User : "+"\t"+user.getName()+"\t"+user.getSureName()+" now returned bike Id:"+"\t"+bike.getId()+"\t"+"to"+"\t"+stationEnd);
         return true;
         }
 

@@ -1,3 +1,4 @@
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 
@@ -27,7 +28,7 @@ public class MainTest {
 
         Station station1 = new Station(1, "lechnerStrasse");
         Station station2 = new Station(2, "wienMitte");
-        Station station3 = new Station(3, " Karlsplatz");
+        Station station3 = new Station(3, "meidling");
         Station station4 = new Station(4, "KarlisPlaz");
 
         HashMap<Integer, Station> stations = new HashMap<>();
@@ -37,8 +38,13 @@ public class MainTest {
         stations.put(station4.getStationID(), station4);
 
 
-        User user=new User();
-        user.setName("ali");
+        User user1=new User();
+        user1.setName("Joe ");
+        user1.setSureName("Deo");
+
+        User user2=new User();
+        user2.setName("Mary");
+        user2.setSureName("Maxi");
 
 
         Station station=new Station(bikes);
@@ -49,19 +55,31 @@ public class MainTest {
 
 
 
-       Station stationStart=new Station(1,"KarlisPlaz");
-       Station stationEnd= new Station(2,"wien mitte");
+       Station stationStart1=new Station(4,"KarlisPlaz");
+       Station stationEnd1= new Station(2,"wien mitte");
+
+        Station stationStart2=new Station(3,"meidling");
+        Station stationEnd2= new Station(1,"wien mitte");
 
 
-        Date date1=new Date(2020,11,12);
-        Date date2= new Date(2020,11,13);
+        Date date1=new Date();
+        SimpleDateFormat sf=new SimpleDateFormat();
 
-        station.rentBike(user,bike1,new Rent_Station(stationStart,stationEnd));
+        Date date2= new Date();
+        SimpleDateFormat sf1=new SimpleDateFormat();
 
-      user.disPlayBikeRented();
+        station.rentBike(user1,bike1,new Rent_Station(stationStart1,stationEnd1));
 
-       station.rentBikeDate(user,bike1,new Rent_Date(date1,date2));
+      user1.disPlayBikeRented();
 
+       station.rentBikeDate(user1,bike1,new Rent_Date(date1,date2));
+
+
+        station.rentBike(user2,bike2,new Rent_Station(stationStart2,stationEnd2));
+
+        user2.disPlayBikeRented();
+
+        station.rentBikeDate(user2,bike2,new Rent_Date(date1,date2));
 
     }
 }
